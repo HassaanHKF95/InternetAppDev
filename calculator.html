@@ -1,0 +1,115 @@
+<html>
+<head>
+<title>HKF_Calculator</title>
+<style>
+.btn_style{
+background-color:green;
+width:40px;
+height:50px;
+border-radius: 25px ; 
+ color: #2C2C2C;
+  font-family: Tahoma;
+  font-size: 20px;
+}
+.font_style{
+
+    font-size: 20px;
+      font-family: Tahoma;
+        color: #00f;
+            font-style: inherit;  
+            font-weight: bold;
+            text-decoration: underline;
+     
+}
+.input_style{
+    height:25px;
+    
+}
+#table_style{
+    border: 3px solid;
+    border-radius: 10px; 
+    width: 500px;
+    color:#00f;
+    margin-top: 100px;
+    
+}
+
+
+</style>
+<script>
+function calc(param){
+    var fnum=document.getElementById('first_num').value;
+    var snum=document.getElementById('second_num').value;
+    
+    
+
+        if(param=='add'){
+             if(isNaN(fnum) || isNaN(snum))
+        document.getElementById('result').innerHTML="Not a Number";  
+else if((fnum=='' || snum=='') || fnum==' ' || snum==' ')		
+        document.getElementById('result').innerHTML="Please insert number in field(s)";  
+
+            else
+       document.getElementById('result').innerHTML=parseInt(fnum)+parseInt(snum);
+        } else if(param=='sub'){
+             if(isNaN(fnum) || isNaN(snum))
+        document.getElementById('result').innerHTML="Not a Number"; 
+else if((fnum=='' || snum=='') || fnum==' ' || snum==' ')		
+        document.getElementById('result').innerHTML="Please insert number in field(s)";  
+		
+            else        
+        document.getElementById('result').innerHTML=fnum-snum;}
+  else if(param=='mul'){
+       if(isNaN(fnum) || isNaN(snum))
+        document.getElementById('result').innerHTML="Not a Number";     
+else if((fnum=='' || snum=='') || fnum==' ' || snum==' ')		
+        document.getElementById('result').innerHTML="Please insert number in field(s)";  
+
+		else        
+        document.getElementById('result').innerHTML=fnum*snum;}
+  else if(param=='dvd'){
+     if(snum ==0 || (fnum==0 && snum==0))
+    document.getElementById('result').innerHTML="Infinity!"; 
+	
+     if(isNaN(fnum) || isNaN(snum))
+        document.getElementById('result').innerHTML="Not a Number";
+else if((fnum=='' || snum=='') || fnum==' ' || snum==' ')		
+        document.getElementById('result').innerHTML="Please insert number in field(s)";  
+
+		else        
+                    document.getElementById('result').innerHTML=fnum/snum;
+    }
+
+
+}
+</script>
+</head>
+<body   background="sample2.jpg" >
+<center></br></br>
+<div  id="main"> 
+<table id="table_style"><tr><td><center>
+<p class="font_style">First Number: </p><input type="text" class="input_style" id="first_num" /></br></br>
+<p class="font_style">Second Number: </p><input type="text" class="input_style" id="second_num" /></br></br>
+
+<button class="btn_style" value="+" id="add" onclick="calc('add');">+</button>
+<button class="btn_style" value="-" id="sub" onclick="calc('sub');">-</button>
+<button class="btn_style" value="*" id="mul" onclick="calc('mul');">x</button>
+<button class="btn_style" value="/" id="dvd" onclick="calc('dvd');">/</button>
+</br></br>
+
+
+
+
+<span id="result" style="background-color:#99ff33;font-size:20px;  "></span>
+
+</center></td></tr></table>
+</div>
+    
+</center>
+
+
+
+
+
+</body>
+</html>
