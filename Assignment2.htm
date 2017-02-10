@@ -1,0 +1,84 @@
+<html>
+<head><title>HKF Assignment2</title>
+<script src="jquery.js"></script>
+
+<script>
+ 
+ function abc()
+ {
+	// alert("ssss");
+ var name_= $('.form_name').val();
+ var email_= $('#form_email').val();
+ var gender_=$('input[name="gender"]:checked').val();
+ 
+ var country_= $('#form_country').val();
+	
+ document.getElementById("result_div").innerHTML='<table id="table" class="table"><tr><th>'
+ +' Full Name '+'</th><th>'+" Email "+
+ '</th><th>'+' Gender '+
+ '</th><th>'+' Country '+
+ '</th></td></tr><tr class="tr"><td>'+name_+'</td><td>'+email_+'</td><td>'+gender_+'</td><td>'+country_+'</td></tr></table>';
+
+ document.getElementById("del").style.display='block';
+ return false;
+ }
+ function del(){
+alert("Press OK to Delete..."); 
+var d=$('.tr');
+
+d.remove();
+
+ }
+
+ </script>
+<style>
+table,td,tr,form{
+border: 3px solid;
+border-bottom-color:green;
+border-top-color:green;
+}
+form{
+width:15%;
+padding:10px 5px 10px 10px;
+background-image:url('url.jpg');
+margin:100px 0 0 150px;
+float:left;
+}
+.table,#del{
+float:right;
+margin:100px 150px 0 0;
+}
+</style>
+ </head>
+<body background="bck.jpg">
+<form>
+  <input type="text" class="form_name" id="form_name" placeholder="Full Name Here"/></br></br>
+ 
+  <input type="email" class="form_email" id="form_email" placeholder="Your Email Here"/></br></br>
+ 
+ Gender : 
+  <input type="radio" class="form_male" id="form_male"  name="gender" value="Male"/>
+  Male
+  <input type="radio" class="form_female" id="form_female" name="gender" value="Female"/>
+  Female
+  </br></br>
+   Country: 
+  <select class="form_country" id="form_country">
+  <option> Pk</option>
+  <option> USA</option>
+  <option> UAE</option> 
+  </select>
+</br></br>
+  <input type="button" onclick="abc();" value="submit"/>
+</form>
+
+<!--<center>
+ 	<div  height="100px" style="background-color:red;height:50%;width:1px" align="center" >.	
+ 	</div>
+ </center>--> 
+
+</br>
+<button id="del" style="display:none;" onclick="del();">Delete</Button>
+<div id="result_div" class="result_div"> </div></br>
+</body >
+</html>
